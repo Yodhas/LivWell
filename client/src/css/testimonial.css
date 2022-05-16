@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  width: 25rem;
+  border-radius: 5px;
+  background-color: #fff;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-image: linear-gradient(#9362cfc5, #cc7573);
+  /* opacity: 0.3; */
+  background-repeat: no-repeat;
+  color: #000;
+  overflow-x: hidden;
+}
+
+.rating-box {
+  width: 130px;
+  height: 130px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #fbc02d;
+  color: #fff;
+}
+
+.rating-label {
+  font-weight: bold;
+}
+
+.rating-bar {
+  width: 300px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.star-active {
+  color: #fbc02d;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.star-active:hover {
+  color: #f9a825;
+  cursor: pointer;
+}
+
+.star-inactive {
+  color: #cfd8dc;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.blue-text {
+  color: rgb(102, 24, 24);
+}
+
+.content {
+  font-size: 18px;
+}
+
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  margin-right: 30px;
+}
+
+.pic {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.vote {
+  cursor: pointer;
+  display: inline-block;
+}
