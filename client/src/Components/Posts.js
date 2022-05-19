@@ -1,0 +1,36 @@
+import React from 'react'
+import OwlCarousel from "react-owl-carousel";
+import CardsNew from './CardsNew';
+
+function Posts({details}) {
+  return (
+    <div>
+        <OwlCarousel
+        style={{marginTop: "-8%"}}
+        className="featured-carousel owl-carousel"
+        
+        items={3}
+        loop
+        autoplay={true}
+        autoplayTimeout={5000}
+        margin={20}
+        nav>
+
+        {details.map((element)=>{
+          console.log(element);
+          return <CardsNew info = {element}/>
+        })
+        }
+        {/* <CardsNew
+          propertyName="LOTUS 802, SHIV ELITE"
+          type="3 BHK Flat."
+          owner="Mr. Mihir Patwari."
+          price="10,000/-"
+        /> */}
+
+      </OwlCarousel>
+    </div>
+  )
+}
+
+export default Posts

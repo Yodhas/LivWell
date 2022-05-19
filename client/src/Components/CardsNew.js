@@ -7,12 +7,10 @@ import image2 from "../images/image2.jpg";
 function CardsNew(props) {
   return (
     <>
-      <section className="ftco-section">
-        <div className="container">
+      <section className="ftco-section " >
+        <div className="container col-sm-12">
           {/* <div className="row"> */}
-          <div className="col-md-12 text-center">
-            <h2 className="heading-section mb-5 pb-md-4">PROPERTIES</h2>
-          </div>
+
 
           {/* <div className="col-md-12"> */}
           {/* <OwlCarousel
@@ -23,7 +21,7 @@ function CardsNew(props) {
                 autoplayTimeout={5000}
                 margin={20}
                 nav> */}
-          <div className="item">
+          <div className="item col-sm-12 col-md-12">
             <div className="blog-entry">
               <a
                 href="/"

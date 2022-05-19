@@ -1,5 +1,5 @@
 import React from 'react'
-import ResponsiveAppBar from './Components/ResponsiveAppBar'
+import ResponsiveAppBar from './ResponsiveAppBar'
 
 function About() {
   return (

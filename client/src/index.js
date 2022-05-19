@@ -1,27 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./Components/HomePage";
 import AddProperty from "./Pages/AddProperty";
 import Allproperties from "./Components/Allproperties";
-import About from "./About";
+import About from "./Components/About";
 import Help from "./Components/Help";
 import ErrorPage from "./Components/ErrorPage";
 import NewProperty from "./Components/NewProperty";
 import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
+import FinalDashboard from "./Components/FinalDashboard";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/dashboard/MyProperty" element={<AddProperty />} />
-        <Route path="/dashboard" element={<App />} />
-        <Route path="/home" element={<HomePage />} />
+        {/* <Route path="/dashboard/MyProperty" element={<AddProperty />} /> */}
+        <Route path="/dashboard" element={<FinalDashboard />} />
+        <Route path="/home" element={<App />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/register" element={<SignUp />} />
         <Route path="/new" element={<NewProperty />} />

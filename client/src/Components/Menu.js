@@ -86,111 +86,16 @@ export default class Menu extends Component {
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a href="/dashboard/MyProperty" className="nav-link">
+                      <Link to="/new" className="nav-link">
                         <i className="fa fa-circle fa-xs nav-icon" />
-                        <Link to="/dashboard/MyProperty">
-                          <p>Add Property</p>{" "}
-                        </Link>
-                      </a>
+                          <p>Add Property</p>
+                        
+                      </Link>
                     </li>
                   </ul>
                 </li>
 
-                <li className="nav-item has-treeview">
-                  <a href="/" className="nav-link">
-                    <i className="nav-icon far fa-plus-square" />
-                    <p>
-                      Settings
-                      <i className="fas fa-angle-left right" />
-                    </p>
-                  </a>
-                  <ul className="nav nav-treeview">
-                    <li className="nav-item">
-                      <a href="pages/examples/login.html" className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Login</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="pages/examples/register.html"
-                        className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Register</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="pages/examples/forgot-password.html"
-                        className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Forgot Password</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="pages/examples/recover-password.html"
-                        className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Recover Password</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="pages/examples/lockscreen.html"
-                        className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Lockscreen</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="pages/examples/legacy-user-menu.html"
-                        className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Legacy User Menu</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="pages/examples/language-menu.html"
-                        className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Language Menu</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="pages/examples/404.html" className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Error 404</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="pages/examples/500.html" className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Error 500</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="pages/examples/pace.html" className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Pace</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="pages/examples/blank.html" className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Blank Page</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="starter.html" className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Starter Page</p>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
+               
               </ul>
             </nav>
             {/* /.sidebar-menu */}
