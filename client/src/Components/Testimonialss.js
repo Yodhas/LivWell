@@ -4,10 +4,10 @@ import "../css/testimonial.css";
 function Testimonialss(props) {
   return (
     <>
-      <div className="container-fluid px-1 py-5 mx-auto">
+      <div className="col-md-4">
         <div className="row justify-content-center">
           <div className="col-xl-7 col-lg-8 col-md-10 col-12 text-center mb-5">
-            <div className="card">
+            <div className="carde">
               <div className="row d-flex">
                 <div className="d-flex flex-column">
                   <h3 className="mt-2 mb-0">{props.name}</h3>
@@ -15,23 +15,21 @@ function Testimonialss(props) {
                     <p
                       className="text-center  mb-0"
                       style={{ textAlign: "center" }}>
-                      {" "}
-                      <span className="fa fa-star star-active"></span>{" "}
-                      <span className="fa fa-star star-active"></span>{" "}
-                      <span className="fa fa-star star-active"></span>{" "}
-                      <span className="fa fa-star star-active"></span>{" "}
-                      <span className="fa fa-star star-inactive"></span>
+                      <span className="fa fa-star stars-active"></span>
+                      <span className="fa fa-star stars-active"></span>
+                      <span className="fa fa-star stars-active"></span>
+                      <span className="fa fa-star stars-active"></span>
+                      <span className="fa fa-star stars-inactive"></span>
                     </p>
                   </div>
                 </div>
               </div>
               <div className="row text-left">
-                <h4 className="blue-text mt-3 text-center">
-                  "An awesome activity to experience"
+                <h4 className="bluee-text mt-3 text-center">
+                  {props.tagl}
                 </h4>
-                <p className="content text-center">
-                  If you really enjoy spending your vacation 'on water' or would
-                  like to try something new and exciting for the first time.
+                <p className="contents text-center">
+                  {props.desc}
                 </p>
               </div>
 
@@ -39,12 +37,11 @@ function Testimonialss(props) {
                 <div className="like px-2 vote">
                   <img src="https://i.imgur.com/mHSQOaX.png" alt="dedo" />
                   <span className="blue-text pl-2" />
-                  20{" "}
+                  {props.likes}
                 </div>
                 <div className="unlike px-2 vote">
-                  {" "}
                   <img src="https://i.imgur.com/bFBO3J7.png" alt="dedo" />
-                  <span className="text-muted pl-2" />4{" "}
+                  <span className="text-muted pl-2" />{props.disl}
                 </div>
               </div>
             </div>

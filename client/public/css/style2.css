@@ -4575,7 +4575,7 @@ button.prop-items-more:hover {
     height: 100%;
 }
 .prop-wrap .prop-slider-top .swiper-slide img {
-    display: none;
+    display: block;
 }
 .prop-wrap .prop-slider-top .swiper-slide .prop-slider-top-zoom {
     position: absolute;

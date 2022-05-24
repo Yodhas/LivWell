@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import User from "../Pages/UserProfile/user"
 
 export default class Dashboard extends Component {
   render() {
@@ -9,17 +10,9 @@ export default class Dashboard extends Component {
           <div className="content-header">
             <div className="container-fluid">
               <div className="row mb-2">
-                <div className="col-sm-6">
-                  <h1 className="m-0 text-dark">Dashboard</h1>
-                </div>
-                <div className="col-sm-6">
-                  <ol className="breadcrumb float-sm-right">
-                    <li className="breadcrumb-item">
-                      <a href="/">Home</a>
-                    </li>
-                    <li className="breadcrumb-item active">Dashboard v1</li>
-                  </ol>
-                </div>
+                
+                <User/>
+                
                 {/* /.col */}
               </div>
               {/* /.row */}
@@ -28,7 +21,9 @@ export default class Dashboard extends Component {
           </div>
           {/* /.content-header */}
           {/* Main content */}
-          <section className="content">{/* /.container-fluid */}</section>
+          <section className="content">
+
+          </section>
           {/* /.content */}
         </div>
       </div>

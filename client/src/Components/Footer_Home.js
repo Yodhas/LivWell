@@ -11,33 +11,30 @@ function Footer() {
         <footer className="footer-bs" style={{ textAlign: "left" }}>
           <div className="row">
             <div className="col-md-3 footer-brand animated fadeInLeft">
-              <h2>Logo</h2>
+              <h2>LivWell</h2>
               <p>
-                Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam
-                porttitor vitae orci nec ultricies. Curabitur vehicula, libero
-                eget faucibus faucibus, purus erat eleifend enim, porta
-                pellentesque ex mi ut sem.
+              LivWell is a Web based Application, which  focuses mainly on helping the students to get the proper accommodation nearby college campus. Also, it displays all the available house and PG facility data such as address, city, state, photos, and furthermore details on it.
               </p>
-              <p>© 2014 BS3 UI Kit, All rights reserved</p>
+              <p>© 2022 LivWell.Co, All rights reserved</p>
             </div>
             <div className="col-md-3 footer-nav animated fadeInUp">
               <h4>Menu —</h4>
               <div className="col-md-6">
                 <ul className="pages">
                   <li>
-                    <a href="/">Travel</a>
+                    <a href="/">Flats</a>
                   </li>
                   <li>
-                    <a href="/">Nature</a>
+                    <a href="/">PG's</a>
                   </li>
                   <li>
-                    <a href="/">Explores</a>
+                    <a href="/">Rooms</a>
                   </li>
                   <li>
-                    <a href="/">Science</a>
+                    <a href="/">RowHouses</a>
                   </li>
                   <li>
-                    <a href="/">Advice</a>
+                    <a href="/">Others</a>
                   </li>
                 </ul>
               </div>

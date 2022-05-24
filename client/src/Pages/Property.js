@@ -1,113 +1,35 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import Footer from "../Components/Footer_Home";
+import ResponsiveAppBar from "../Components/ResponsiveAppBar";
 
 function Property() {
+
+    const location = useLocation();
+    const refId = location.pathname.split('/')[2];
+
+    const [datas, setdatas] = useState({});
+
+    useEffect(() => {
+      const getPost = async()=>{
+        const res = await axios.get('/new/'+refId);
+        console.log(res);
+        setdatas(res.data);
+      }
+      getPost()
+    }, [])
+    
+  
+
   return (
     <div>
+      <ResponsiveAppBar/>
       <div className="mainmenu-bg" id="mainmenu-bg" />
-      <div id="mainmenu-wrap">
-        <nav id="mainmenu" className="mainmenu">
-          <button id="mainmenu-close" className="mainmenu-close" href="/">
-            <i className="ion-android-close" />
-          </button>
-          <ul>
-            <li className="menu-item-has-children">
-              <a href="index-detailed.html">
-                Home <i className="fa fa-caret-down" />
-              </a>
-              <ul className="sub-menu">
-                <li>
-                  <a href="index-agency.html">Home - Agency</a>
-                </li>
-                <li>
-                  <a href="index-detailed.html">Home - Detailed</a>
-                </li>
-                <li>
-                  <a href="index-banners.html">Home - Banners</a>
-                </li>
-                <li>
-                  <a href="index-multi.html">Home - Multi</a>
-                </li>
-                <li>
-                  <a href="index-booking.html">Home - Booking</a>
-                </li>
-                <li>
-                  <a href="index-map.html">Home - Full Map</a>
-                </li>
-              </ul>
-            </li>
-            <li className="menu-item-has-children active">
-              <a href="catalog-grid.html">
-                Properties <i className="fa fa-caret-down" />
-              </a>
-              <ul className="sub-menu">
-                <li>
-                  <a href="catalog-grid.html">Catalog - Grid Style</a>
-                </li>
-                <li>
-                  <a href="catalog-list.html">Catalog - List Style</a>
-                </li>
-                <li>
-                  <a href="property.html">Single Property - Style 1</a>
-                </li>
-                <li className="active">
-                  <a href="property-2.html">Single Property - Style 2</a>
-                </li>
-              </ul>
-            </li>
-            <li className="menu-item-has-children">
-              <a href="agents.html">
-                Agents <i className="fa fa-caret-down" />
-              </a>
-              <ul className="sub-menu">
-                <li>
-                  <a href="agents.html">Agents List</a>
-                </li>
-                <li>
-                  <a href="agent.html">Agent Page</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="elements.html">Elements</a>
-            </li>
-            <li className="menu-item-has-children">
-              <a href="blog-grid.html">
-                Blog <i className="fa fa-caret-down" />
-              </a>
-              <ul className="sub-menu">
-                <li>
-                  <a href="blog-grid.html">Grid Style</a>
-                </li>
-                <li>
-                  <a href="blog-list.html">List Style</a>
-                </li>
-                <li>
-                  <a href="post.html">Single Post</a>
-                </li>
-                <li>
-                  <a href="post-slider-sidebar-right.html">Slider Post</a>
-                </li>
-              </ul>
-            </li>
-            <li className="menu-item-has-children">
-              <a href="gallery.html">
-                Pages <i className="fa fa-caret-down" />
-              </a>
-              <ul className="sub-menu">
-                <li>
-                  <a href="gallery.html">Gallery</a>
-                </li>
-                <li>
-                  <a href="404.html">404 Page</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
+     
       <div className="container prop-b-crumbs">
         <time dateTime="2017-12-14 20:00" className="prop-date">
-          Updated on May 29, 2017 at 3:42 pm
+          Updated on May 17, 2022 at 3:42 pm
         </time>
         <ul className="b-crumbs">
           <li>
@@ -125,7 +47,7 @@ function Property() {
             <div className="swiper-container prop-slider-top">
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
-                  <img src="/dist/img2/PropertuImage.jpg" alt="abcd" />
+                  <img src="https://im.proptiger.com/1/659733/6/shiv-elite-elevation-4597384.jpeg" alt="abcd" />
                   <a
                     href="http://placehold.it/1350x900"
                     className="fancy-img prop-slider-top-zoom"
@@ -134,7 +56,7 @@ function Property() {
                   </a>
                 </div>
                 <div className="swiper-slide">
-                  <img src="/dist/img2/PropertuImage.jpg" alt="xyz" />
+                  <img src="https://mediacdn.99acres.com/media1/16790/7/335807528T-1640334563753.jpg" alt="xyz" />
                   <a
                     href="http://placehold.it/1350x900"
                     className="fancy-img prop-slider-top-zoom"
@@ -143,7 +65,7 @@ function Property() {
                   </a>
                 </div>
                 <div className="swiper-slide">
-                  <img src="/dist/img2/PropertuImage.jpg" alt="uvw" />
+                  <img src="https://is1-3.housingcdn.com/01c16c28/331c3921b230bc53f7b320a2fa99757c/v0/fs/2_bhk_apartment-for-sale-shankarpur_1-Nagpur-bedroom.jpg" alt="uvw" />
                   <a
                     href="http://placehold.it/1349x900"
                     className="fancy-img prop-slider-top-zoom"
@@ -152,7 +74,7 @@ function Property() {
                   </a>
                 </div>
                 <div className="swiper-slide">
-                  <img src="http://placehold.it/720x480" alt="" />
+                  <img src="/dist/img2/PropertuImage.jpg" alt="" />
                   <a
                     href="http://placehold.it/1307x900"
                     className="fancy-img prop-slider-top-zoom"
@@ -192,41 +114,31 @@ function Property() {
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
                   {" "}
+                  <img src="https://mediacdn.99acres.com/media1/16790/7/335807528T-1640334563753.jpg" alt="uvw" />
+                </div>
+                <div
+                  className="swiper-slide"
+                  >
+                  <img src="https://is1-3.housingcdn.com/01c16c28/8d19d06bf30db6cdf5b03607e231060a/v0/fs/2_bhk_apartment-for-sale-shankarpur_1-Nagpur-hall.jpg" alt="uvw" />
+                </div>
+                <div
+                  className="swiper-slide"
+                  >
+                  <img src="https://files.propertywala.com/photos/ae/J119004331.kitchen.2761902l.jpg" alt="uvw" />
+                </div>
+                <div
+                  className="swiper-slide"
+                  >
+                  <img src="https://newprojects.99acres.com/projects/om_shivam_buildcon._pvt._ltd./shiv_elite/images/5uvexmvf.jpg" alt="uvw" />
+                </div>
+                <div
+                  className="swiper-slide"
+                  >
                   <img src="/dist/img2/PropertuImage.jpg" alt="uvw" />
                 </div>
                 <div
                   className="swiper-slide"
-                  style={{
-                    backgroundImage: "url(http://placehold.it/150x100)",
-                  }}>
-                  <img src="/dist/img2/PropertuImage.jpg" alt="uvw" />
-                </div>
-                <div
-                  className="swiper-slide"
-                  style={{
-                    backgroundImage: "url(http://placehold.it/150x100)",
-                  }}>
-                  <img src="/dist/img2/PropertuImage.jpg" alt="uvw" />
-                </div>
-                <div
-                  className="swiper-slide"
-                  style={{
-                    backgroundImage: "url(http://placehold.it/150x100)",
-                  }}>
-                  <img src="/dist/img2/PropertuImage.jpg" alt="uvw" />
-                </div>
-                <div
-                  className="swiper-slide"
-                  style={{
-                    backgroundImage: "url(http://placehold.it/150x100)",
-                  }}>
-                  <img src="/dist/img2/PropertuImage.jpg" alt="uvw" />
-                </div>
-                <div
-                  className="swiper-slide"
-                  style={{
-                    backgroundImage: "url(http://placehold.it/150x100)",
-                  }}>
+                  >
                   <img src="/dist/img2/PropertuImage.jpg" alt="uvw" />
                 </div>
               </div>
@@ -234,10 +146,10 @@ function Property() {
           </div>
           <div className="prop-cont">
             <p className="prop-main-loc">
-              <a href="catalog-grid.html">Madrid</a>,{" "}
-              <a href="catalog-grid.html">Spain</a>
+              <a href="catalog-grid.html">{datas.address} </a>,{" "}
+              <a href="catalog-grid.html">Maharashtra</a>
             </p>
-            <h1 className="prop-main-ttl">Comfortable Apartments 15 Sqrt</h1>
+            <h1 className="prop-main-ttl">{datas.propname}</h1>
             <div className="prop-main-rating">
               <ul>
                 <li>
@@ -271,55 +183,55 @@ function Property() {
                 <span className="prop-i-info-icon">
                   <img src="/dist/img2/ico-area.png" alt="" />
                 </span>
-                Square Feet
+                No. of Rooms
               </dt>
               <dd>
-                <a href="catalog-grid.html">1500</a>
+                <a href="catalog-grid.html">3 BHK</a>
               </dd>
               <dt>
                 <span className="prop-i-info-icon">
                   <img src="/dist/img2/ico-bed.png" alt="" />
                 </span>
-                Beds
+                Owner
               </dt>
               <dd>
-                <a href="catalog-grid.html">4</a>
+                <a href="catalog-grid.html">{datas.ownname}</a>
               </dd>
               <dt>
                 <span className="prop-i-info-icon">
                   <img src="/dist/img2/ico-price.png" alt="" />
                 </span>
-                Price
+                Contact
               </dt>
               <dd>
-                <a href="catalog-grid.html">$1600</a>
+                <a href="catalog-grid.html">{datas.owncontact}</a>
               </dd>
               <dt>
                 <span className="prop-i-info-icon">
                   <img src="/dist/img2/ico-type.png" alt="" />
                 </span>
-                Type
+                Rent
               </dt>
               <dd>
-                <a href="catalog-grid.html">Apartment</a>
+                <a href="catalog-grid.html">Rs. {datas.rentpermonth}</a>
               </dd>
               <dt>
                 <span className="prop-i-info-icon">
                   <img src="/dist/img2/ico-garage.png" alt="" />
                 </span>
-                Garage SqFt
+                Deposit
               </dt>
               <dd>
-                <a href="catalog-grid.html">2 / 200</a>
+                <a href="catalog-grid.html">Rs. {datas.depositamount}</a>
               </dd>
               <dt>
                 <span className="prop-i-info-icon">
                   <img src="/dist/img2/ico-bath.png" alt="" />
                 </span>
-                Baths
+                Type
               </dt>
               <dd>
-                <a href="catalog-grid.html">2</a>
+                <a href="catalog-grid.html">{datas.ptype}</a>
               </dd>
               <dt>
                 <span className="prop-i-info-icon">
@@ -328,14 +240,14 @@ function Property() {
                 Guests
               </dt>
               <dd>
-                <a href="catalog-grid.html">3</a>
+                <a href="catalog-grid.html">5-6</a>
               </dd>
             </dl>
             <div className="prop-cont-bottom">
               <div className="prop-main-price-wrap">
                 <p className="prop-main-price-label">Price</p>
                 <p className="prop-main-price">
-                  <span className="prop-main-price-val">$1800</span>{" "}
+                  <span className="prop-main-price-val">Rs. {datas.rentpermonth}</span>{" "}
                   <span className="prop-main-price-currency">/ month</span>
                 </p>
               </div>
@@ -428,100 +340,34 @@ function Property() {
         <div className="prop-agent">
           <p>Agent</p>
           <h3>
-            <a href="agent.html">Mark Duncan</a>
+            <strong>LivWell Co.</strong>
           </h3>
-          <a href="agent.html">
-            <img src="http://placehold.it/80x80" alt="" />
-          </a>
+         
         </div>
         <a href="/" className="modalform-btn btn1 prop-callback">
-          Get direction
+           <strong>Add to Wishlist</strong>
         </a>
       </div>
-      <div className="container cont-boxed prop-atts-wrap-boxed">
-        <div className="prop-atts-wrap">
-          <div className="prop-atts">
-            <h3>Room Dimensions</h3>
-            <dl>
-              <dt>Interior Size</dt>
-              <dd>2500 Sq Ft</dd>
-              <dt>Bedrooms</dt>
-              <dd>4</dd>
-              <dt>Bathrooms</dt>
-              <dd>3</dd>
-              <dt>Garage</dt>
-              <dd>3 car</dd>
-              <dt>Laundry Room</dt>
-              <dd>Washer / Dryer</dd>
-            </dl>
-          </div>
-          <div className="prop-atts">
-            <h3>Exterior Details</h3>
-            <dl>
-              <dt>Lot Size</dt>
-              <dd>0.5 Acres</dd>
-              <dt>Roof</dt>
-              <dd>Partial Tile Roof</dd>
-              <dt>Sewer</dt>
-              <dd>Connected</dd>
-              <dt>Construction</dt>
-              <dd>Frame / Wood</dd>
-              <dt>Cooling</dt>
-              <dd>Electric Air</dd>
-            </dl>
-          </div>
-          <div className="prop-atts">
-            <h3>Room Proportions</h3>
-            <dl>
-              <dt>Living Room</dt>
-              <dd>29×18</dd>
-              <dt>Dining Room</dt>
-              <dd>12×11</dd>
-              <dt>Kitchen</dt>
-              <dd>15×14</dd>
-              <dt>Master Bedroom</dt>
-              <dd>23×14</dd>
-              <dt>Bedroom 2</dt>
-              <dd>2×11</dd>
-            </dl>
-          </div>
-        </div>
-      </div>
+      
       <div className="prop-info">
         <div className="stylization container prop-desc">
           <h2>
             About <b>Property</b>
           </h2>
           <p>
-            Etiam vitae tortor id augue mattis convallis eget sed elit. Quisque
-            tincidunt faucibus orci, in tristique dui. Sed ac vestibulum dui.
-            Nam at ligula odio. Morbi sit amet vulputate lectus. Fusce non lacus
-            nec nulla tristique rutrum. Suspendisse tincidunt non urna sit amet
-            fringilla. Morbi sit amet sagittis risus, non porta eros. Sed varius
-            id risus in iaculis. Phasellus non egestas enim, vel molestie justo.
-            Maecenas varius neque ullamcorper interdum sagittis. Suspendisse
-            turpis risus, lacinia at vestibulum at, tempor vel felis.
+          {datas.pfeatures}
           </p>
-        </div>
-        <hr className="prop-hr" />
-        <div className="container prop-features">
+        <hr className="prop-hr mb-4" />
           <h2>
-            Advanced <b>Features</b>
+             <b>For further Details</b>
           </h2>
-          <ul>
-            <li>Air Conditioning</li>
-            <li>Microwave</li>
-            <li>Window Coverings</li>
-            <li>Lawn</li>
-            <li>Barbeque</li>
-            <li>WiFi</li>
-            <li>Dryer</li>
-            <li>Gym</li>
-            <li>Sauna</li>
-            <li>Refrigerator</li>
-          </ul>
+           <p>Contact :   <a href="tel:9876543210" >{datas.owncontact}</a> <br/>
+           Email : <a href="mailto:varun2120@gmail.com">{datas.email}</a> </p>
+          
         </div>
+        
       </div>
+      <Footer/>
     </div>
   );
 }

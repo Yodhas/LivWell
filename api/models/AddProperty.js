@@ -35,6 +35,14 @@ const propSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+   ptype : {
+       type : String,
+       required : true
+   },
+   pfeatures : {
+       type : String,
+       required : true
+   }
    
      
 },

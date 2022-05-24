@@ -3,8 +3,15 @@ import React from "react";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import image2 from "../images/image2.jpg";
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
+import { Link } from "react-router-dom";
+import Property from "../Pages/Property";
+import { Button } from "@mui/material";
 
-function CardsNew(props) {
+
+function CardsNew({info}) {
+
   return (
     <>
       <section className="ftco-section " >
@@ -49,24 +56,37 @@ function CardsNew(props) {
                 className="text border border-top-0 p-4"
                 style={{ textAlign: "left" }}>
                 <h3 className="heading">
-                  <a href="/">{props.propertyName}</a>
+                  <a href="/">{info.propname}</a>
                 </h3>
                 <p>
-                  TYPE: <strong>&nbsp; {props.type}</strong>
+                  TYPE: <strong>&nbsp; {info.ptype}</strong>
                 </p>
-                <p>Semi-Furnished Flat with Sofa, Washing Machine, TV.</p>
+                <p>{info.pfeatures}</p>
                 <p>
-                  OWNER: <strong>&nbsp; {props.owner}</strong>
+                  OWNER: <strong>&nbsp; {info.ownname}</strong>
                 </p>
                 <br />
                 <div>
                   {" "}
                   <p style={{ "font-size": "1.2rem", color: "black" }}>
                     {" "}
-                    PRICE: <strong>{props.price}</strong>
+                    Rent: &#8377;<strong> {info.rentpermonth}</strong>/month
                   </p>
                 </div>
-                <div
+
+
+
+    <Stack spacing={1}>
+    <Rating name="half-rating-read" defaultValue={4} precision={0.5} readOnly />
+    </Stack>
+    <p className="mb-0 mt-3">
+                    <a href={`/single/${info._id}`} className="btn btn-primary" style={{textDecoration: "none"}}>
+                      Explore <span className="ion-ios-arrow-round-forward" />
+                    </a>
+                  </p>
+  
+
+                {/* <div
                   className="d-flex pb-4"
                   style={{
                     "-webkit-box-pack": "space-around",
@@ -186,13 +206,9 @@ function CardsNew(props) {
                       title="Sucks big time - 0.5 stars"
                     />
                   </fieldset>
-                  <p className="mb-0 ml-4">
-                    <a href="/property" className="btn btn-primary">
-                      Explore <span className="ion-ios-arrow-round-forward" />
-                    </a>
-                  </p>
+                  
                   <br />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -13,12 +13,16 @@ import NewProperty from "./Components/NewProperty";
 import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
 import FinalDashboard from "./Components/FinalDashboard";
+import Property from "./Pages/Property";
+import User from "./Pages/UserProfile/user.js";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/userProfile" element={<User />} />
+        <Route path="/single/:id" element={<Property />} />
         {/* <Route path="/dashboard/MyProperty" element={<AddProperty />} /> */}
         <Route path="/dashboard" element={<FinalDashboard />} />
         <Route path="/home" element={<App />} />

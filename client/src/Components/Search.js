@@ -9,7 +9,7 @@ function Search() {
         style={{
           position: "absolute",
           zIndex: "15",
-          top: "9.5%",
+          top: "13.3%",
           left: "63%",
           width: "2.8%",
           opacity: "0.4",
@@ -28,7 +28,7 @@ function Search() {
           alignItems: "center",
           height: "2vh",
           flexDirection: "column",
-          top: "11%",
+          top: "15%",
         }}>
         <input
           type="text"

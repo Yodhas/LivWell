@@ -10,7 +10,6 @@ function FinalDashboard() {
          <Header />
       <Menu />
       <Dashboard />
-      <Footer />
     </div>
   )
 }

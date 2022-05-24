@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.card {
+.carde {
   width: 25rem;
   border-radius: 5px;
   background-color: #fff;
@@ -18,62 +18,35 @@
   overflow-x: hidden;
 }
 
-.rating-box {
-  width: 130px;
-  height: 130px;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: #fbc02d;
-  color: #fff;
-}
 
-.rating-label {
-  font-weight: bold;
-}
 
-.rating-bar {
-  width: 300px;
-  padding: 8px;
-  border-radius: 5px;
-}
 
-.star-active {
+
+.stars-active {
   color: #fbc02d;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.star-active:hover {
+.stars-active:hover {
   color: #f9a825;
   cursor: pointer;
 }
 
-.star-inactive {
+.stars-inactive {
   color: #cfd8dc;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.blue-text {
+.bluee-text {
   color: rgb(102, 24, 24);
 }
 
-.content {
+.contents {
   font-size: 18px;
 }
 
-.profile-pic {
-  width: 90px;
-  height: 90px;
-  border-radius: 100%;
-  margin-right: 30px;
-}
-
-.pic {
-  width: 80px;
-  height: 80px;
-  margin-right: 10px;
-}
 
 .vote {
   cursor: pointer;

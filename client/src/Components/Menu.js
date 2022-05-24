@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import profile from "../images/image.jpg"
+import logo from "../images/logo.png"
 
 export default class Menu extends Component {
   render() {
@@ -9,26 +11,30 @@ export default class Menu extends Component {
           {/* Brand Logo */}
           <a href="/" className="brand-link">
             <img
-              src="/dist/img/AdminLTELogo.png"
+              src={logo}
               alt="AdminLTE Logo"
-              className="brand-image img-circle elevation-3"
-              style={{ opacity: ".8" }}
+              className="brand-image elevation-3"
+              style={{ opacity: "1" }}
             />
-            <span className="brand-text font-weight-light">LivWell</span>
+            {/* <span className="brand-text font-weight-light"> </span> */}
+            <br/>
           </a>
+
+          
+
           {/* Sidebar */}
           <div className="sidebar">
             {/* Sidebar user panel (optional) */}
             <div className="user-panel mt-3 pb-3 mb-3 d-flex">
               <div className="image">
                 <img
-                  src="/dist/img/user2-160x160.jpg"
+                  src={profile}
                   className="img-circle elevation-2"
                   alt="User"
                 />
               </div>
               <div className="info" style={{ color: "white" }}>
-                Alexander Pierce
+                Varun Katiyar
               </div>
             </div>
             {/* Sidebar Menu */}
@@ -41,10 +47,10 @@ export default class Menu extends Component {
                 {/* Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library */}
                 <li className="nav-item">
-                  <a href="pages/calendar.html" className="nav-link">
+                  <Link to="/dashboard" className="nav-link">
                     <i className="nav-icon fa fa-user" />
                     <p>My Profile</p>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item has-treeview menu-open">
                   <a href="/" className="nav-link ">
@@ -80,10 +86,10 @@ export default class Menu extends Component {
                   </a>
                   <ul className="nav nav-treeview">
                     <li className="nav-item">
-                      <a href="/" className="nav-link">
+                      <Link to="/single" className="nav-link">
                         <i className="fa fa-circle nav-icon" />
                         <p>My Property</p>
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item">
                       <Link to="/new" className="nav-link">
@@ -102,6 +108,7 @@ export default class Menu extends Component {
           </div>
           {/* /.sidebar */}
         </aside>
+
       </div>
     );
   }

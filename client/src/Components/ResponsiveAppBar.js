@@ -12,6 +12,9 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import logo from "../images/logo.png"
+import userImg from "../images/image.jpg"
   
 const pages = ['Home', 'Property', 'About', 'Help'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -35,11 +38,13 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(null);
   };
 
+  const [loggedIn, setloggedIn] = useState(true)
+
   return (
-    <AppBar position="static" style={{ backgroundColor: 'black' }}>
+    <AppBar position="static " style={{ backgroundColor: 'transparent', position:"absolute", zIndex:'2', backgroundImage: "linear-gradient(45deg, #00000070, transparent)"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Avatar alt="Remy Sharp" src="/broken-image.jpg" sx={{ width: 50, height: 50 }} />
+          <Avatar alt="Remy Sharp" src={logo} sx={{ width: 120, height: 50 }} />
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -73,7 +78,7 @@ const ResponsiveAppBar = () => {
               {pages.map((page, idx) => (
                 <MenuItem key={idx} onClick={handleCloseNavMenu}>
                   <Link to={`/${page.toLowerCase()}`}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography  textAlign="center" >{page}</Typography>
                   </Link>
                 </MenuItem>
               ))}
@@ -84,7 +89,7 @@ const ResponsiveAppBar = () => {
             {pages.map((page, idx) => (
 
               <Link to={`/${page.toLowerCase()}`}>
-                  <Button key={idx} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+                 <Button key={idx} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block'}}>
                 {page}
               </Button>
                   </Link>
@@ -92,10 +97,26 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {!loggedIn && 
+          <>
+          <Link to="/register">
+            <Button variant="contained" className="mx-3" disableElevation>
+              Sign up  
+            </Button>
+          </Link>
+
+          <Link to="/login">
+            <Button variant="contained"disableElevation>
+              Login  
+            </Button>
+          </Link>
+          </>
+          }
+
+          {loggedIn && <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar src="/broken-image.jpg" />
+                <Avatar src={userImg} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -114,8 +135,8 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+              {settings.map((setting, idx) => (
+                <MenuItem key={idx} onClick={handleCloseUserMenu}>
                   <Link to="/dashboard">
                     <Typography textAlign="center">{setting}</Typography>
                   </Link>
@@ -123,6 +144,7 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
+}
         </Toolbar>
       </Container>
     </AppBar>
