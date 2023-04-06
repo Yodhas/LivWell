@@ -1,0 +1,159 @@
+[{
+  "_id": {
+    "$oid": "6285f0792a3e453a655d6aa1"
+  },
+  "propname": "Shiv Elite Alpina 104",
+  "ownname": "Varun Katiyar ",
+  "owncontact": {
+    "$numberLong": "9876666665"
+  },
+  "address": "Shankarpur Nagpur ",
+  "rentpermonth": 10000,
+  "depositamount": 20000,
+  "email": "varun2120@gmail.com",
+  "password": "123456789",
+  "ptype": "Flat",
+  "pfeatures": "Semi - Furnished 3bhk flat with 2 beds ,sofa, washing machine ",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652945017199"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652945017199"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6285f0a62a3e453a655d6aa3"
+  },
+  "propname": "Rai Imperial B-Wing",
+  "ownname": "Ashutosh Rokade ",
+  "owncontact": {
+    "$numberLong": "9876664565"
+  },
+  "address": "Near government College of Engineering Nagpur",
+  "rentpermonth": 6000,
+  "depositamount": 12000,
+  "email": "ashu2120@gmail.com",
+  "password": "1234567890",
+  "ptype": "Rowhouse",
+  "pfeatures": "Semi-Furnished 2bhk flat with basic accomodation facilities available ",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652945062382"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652945062382"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6285f0d72a3e453a655d6aa5"
+  },
+  "propname": "Thakre's PG",
+  "ownname": "Ankur Thakre",
+  "owncontact": {
+    "$numberLong": "98766645650"
+  },
+  "address": "Near Gupta clinic, sector-29 New Khapri",
+  "rentpermonth": 5000,
+  "depositamount": 10000,
+  "email": "ankur2120@gmail.com",
+  "password": "12345670",
+  "ptype": "PG",
+  "pfeatures": "PG only for girls! with all safety norms with 2 time meal included!",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652945111600"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652945111600"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6285f2152a3e453a655d6aaa"
+  },
+  "propname": "Rokade Nivas",
+  "ownname": "Laxman Rokade ",
+  "owncontact": {
+    "$numberLong": "98766645650"
+  },
+  "address": "Opp. Cafe Temptation, New Khapri",
+  "rentpermonth": 4000,
+  "depositamount": 8000,
+  "email": "user@gmail.com",
+  "password": "12345670",
+  "ptype": "Room",
+  "pfeatures": "Room Available for 2 members without furniture, electric bill excluded.",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652945429443"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652945429443"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6285f7a8a7da9034d87c3cb6"
+  },
+  "propname": "Shive Elite Aster-604",
+  "ownname": "Tanmay Pardhi ",
+  "owncontact": 9876650,
+  "address": "Phase-3, Shive Elite, Shankarpur, Nagpur",
+  "rentpermonth": 9000,
+  "depositamount": 15000,
+  "email": "an@gmail.com",
+  "password": "12345670",
+  "ptype": "Flat",
+  "pfeatures": "Furnished 2bhk flat with 1 bed, A.C, washing machine ",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652946856613"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652946856613"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6285f7e4a7da9034d87c3cba"
+  },
+  "propname": "Sharma's PG",
+  "ownname": "Mr. Kishor Bhagat ",
+  "owncontact": 9876650,
+  "address": "Besides Government College of Engineering, Nagpur",
+  "rentpermonth": 3000,
+  "depositamount": 7000,
+  "email": "anonymous@gmail.com",
+  "password": "anonymous",
+  "ptype": "PG",
+  "pfeatures": "Only for Girls!",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652946916130"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652946916130"
+    }
+  },
+  "__v": 0
+}]

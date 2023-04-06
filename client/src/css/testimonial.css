@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+.carde {
+  width: 25rem;
+  border-radius: 5px;
+  background-color: #fff;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-image: linear-gradient(#9362cfc5, #cc7573);
+  /* opacity: 0.3; */
+  background-repeat: no-repeat;
+  color: #000;
+  overflow-x: hidden;
+}
+
+
+
+
+
+.stars-active {
+  color: #fbc02d;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.stars-active:hover {
+  color: #f9a825;
+  cursor: pointer;
+}
+
+.stars-inactive {
+  color: #cfd8dc;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.bluee-text {
+  color: rgb(102, 24, 24);
+}
+
+.contents {
+  font-size: 18px;
+}
+
+
+.vote {
+  cursor: pointer;
+  display: inline-block;
+}
