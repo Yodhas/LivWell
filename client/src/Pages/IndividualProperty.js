@@ -39,7 +39,7 @@ function App() {
           width: "100%",
           height: "90%",
           zIndex: "-1",
-          opacity: "50%",
+          opacity: "28%",
         }}
       />
       <div
@@ -66,16 +66,6 @@ function App() {
             marginTop: "10px",
           }}
         >
-          <div
-            style={{
-              height: "30%",
-              width: "40%",
-              backgroundColor: "black",
-              opacity: "70%",
-              position: "absolute",
-              zIndex: "-1",
-            }}
-          ></div>
           <p className="prop-main-loc">
             <a href="catalog-grid.html">{datas.address} </a>{" "}
           </p>
