@@ -16,6 +16,8 @@ import SignUp from "./Components/SignUp";
 import FinalDashboard from "./Components/FinalDashboard";
 import Property from "./Pages/Property";
 import User from "./Pages/UserProfile/user.js";
+import Pricing from "./Components/Pricing.js"
+import IndividualProperty from "./Pages/IndividualProperty";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,7 +25,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/userProfile" element={<User />} />
-        <Route path="/single/:id" element={<Property />} />
+        <Route path="/single/:id" element={<IndividualProperty />} />
         {/* <Route path="/dashboard/MyProperty" element={<AddProperty />} /> */}
         <Route path="/dashboard" element={<FinalDashboard />} />
         <Route path="/home" element={<App />} />
@@ -35,6 +37,7 @@ ReactDOM.render(
         <Route path="/help" element={<Help />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="/college/:id" element={<Allfetchbycollege />} />
+        <Route path="/pricing" element={< Pricing/>} />
       </Routes>
     </Router>
   </React.StrictMode>,

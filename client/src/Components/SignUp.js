@@ -40,10 +40,49 @@ export default function SignUp() {
   const [lname, setlname] = useState('');
   const [email, setemail] = useState('');
   const [password, setPass] = useState('');
-  
+  const [emailError, setemailError] = useState('');
+  const [passError, setpassError] = useState('');
+  const [firstError, setfirstError] = useState('');
+  const [lastError, setlastError] = useState('');
+
 
   const handleSubmit = async(event) => {
     event.preventDefault();
+
+    if (fname === '') {
+      setfirstError('Please Enter Your First Name');
+      return;
+    }
+
+    if(!/^[a-zA-Z]{2,256}/.test(fname)){
+      setfirstError('Invalid Name!! Only Alphabets Allowed')
+      return;
+    }
+
+    if (lname === '') {
+      setlastError('Please Enter Your Last Name');
+      return;
+    }
+
+    if(!/^[a-zA-Z]{2,256}/.test(lname)){
+      setlastError('Invalid Name!! Only Alphabets Allowed')
+      return;
+    }
+
+    if (!/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(email)) {
+      setemailError('Please enter a valid email address');
+      return;
+    }
+
+
+    if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)) {
+      let ErrorText = "Contain at least one lowercase letter" +"\n" + "Contain at least one uppercase letter" + "\n"
+        + "Contain at least one digit" + "\n" + "Contain at least one special character" + "\n" + 
+        "Be at least 8 characters long"
+      setpassError(`Please enter a valid Password \nYour password should \n${ErrorText}`);
+      return;
+    }
+
     const data = new FormData(event.currentTarget);
     setfname(data.get('fName'))
     setlname(data.get('lName'))
@@ -72,12 +111,14 @@ export default function SignUp() {
       setlname('')
       setemail('')
       setPass('')
+      navigate('/login');
     }
     catch (error) {
       console.error(error);
+      setemailError("Email Address Already Exists!")
+      return
     }
 
-    navigate('/login');
   };
 
   return (
@@ -109,8 +150,14 @@ export default function SignUp() {
                   id="firstName"
                   label="First Name"
                   value={fname}
-                  onChange={(event) => setfname(event.target.value)}
+                  onChange={(event) =>{ 
+                    setfname(event.target.value)
+                    setfirstError('');
+                  }
+                }
                   autoFocus
+                  error={firstError !== ''}
+        helperText={firstError}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -122,7 +169,13 @@ export default function SignUp() {
                   name="lName"
                   autoComplete="family-name"
                   value={lname}
-                  onChange={(event) => setlname(event.target.value)}
+                  onChange={(event) =>{ 
+                    setlname(event.target.value) 
+                    setlastError('')
+                  }
+                }
+                error={lastError !== ''}
+                helperText={lastError}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -134,7 +187,13 @@ export default function SignUp() {
                   name="email"
                   autoComplete="email"
                   value={email}
-                  onChange={(event) => setemail(event.target.value)}
+                  onChange={(event) => {
+                      setemail(event.target.value)
+                      setemailError('')
+                    }
+                  }
+                  error={emailError !== ''}
+                  helperText={emailError}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -147,15 +206,16 @@ export default function SignUp() {
                   id="password"
                   autoComplete="new-password"
                   value={password}
-                  onChange={(event) => setPass(event.target.value)}
+                  onChange={(event) =>{ 
+                    setPass(event.target.value)
+                    setpassError('')
+                  }
+                }
+                  error={passError !== ''}
+                  helperText={passError}
                 />
               </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive updates via email."
-                />
-              </Grid>
+              
             </Grid>
             <Button
               type="submit"

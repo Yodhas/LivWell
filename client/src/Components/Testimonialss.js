@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/testimonial.css";
+import "../css/post.css"
 
 function Testimonialss(props) {
   return (

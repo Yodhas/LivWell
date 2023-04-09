@@ -21,7 +21,7 @@ router.post("/register", async (req, res)=>{
         res.status(200).json(user);
 
     } catch (err) {
-        res.status(500).json(err);
+      console.log("Username Already Exists!!")
     }
 })
 router.get("/:id", async (req, res) => {
@@ -60,7 +60,7 @@ router.post("/login", async (req, res) => {
       const { password, ...others } = user._doc;
       res.status(200).json(others);
     } catch (err) {
-      res.status(500).json(err);
+      console.log("Invalid Email or Password")
     }
   });
 

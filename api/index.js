@@ -8,6 +8,8 @@ const userRoute = require("./routes/user")
 const AddNewPropertyRoute = require("./routes/AddNewProperty")
 const multer = require("multer");
 const cors = require('cors');
+const dotenv = require("dotenv");
+const paymentRoutes = require("./routes/payment");
 
 app.use(function(req, res, next) {
   // Allow requests from http://localhost:3000
@@ -21,8 +23,9 @@ app.use(function(req, res, next) {
   // Pass control to the next middleware function
   next();
 });
-
+dotenv.config();
 app.use(express.json());
+app.use(cors());
 
 main().then(()=>{console.log("Successfully Connected!")}).catch(err => console.log(err));
 
@@ -35,24 +38,24 @@ async function main() {
 // })
 
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "images");
-  },
-  filename: (req, file, cb) => {
-    cb(null, "hello.png");
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, "images");
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, "hello.png");
+//   },
+// });
 
-const upload = multer({ storage: storage });
-app.post("/api/upload", upload.single("file"), (req, res) => {
-  res.status(200).json("File has been uploaded");
-});
+// const upload = multer({ storage: storage });
+// app.post("/api/upload", upload.single("file"), (req, res) => {
+//   res.status(200).json("File has been uploaded");
+// });
 
 app.use('/api/auth', authRoute)
 app.use('/api/user', userRoute)
 app.use('/api/new', AddNewPropertyRoute)
-
+app.use("/api/payment", paymentRoutes);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

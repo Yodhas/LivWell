@@ -37,7 +37,7 @@ export default function SignIn() {
 
   const navigate = useNavigate();
 
-  const [loggedIn, setloggedIn] = useState(false)
+  const [loggedIn, setloggedIn] = useState(localStorage.getItem('isLogged'))
   const [email, setemail] = useState('');
   const [password, setPass] = useState('');
 
@@ -60,7 +60,7 @@ export default function SignIn() {
         withCredentials: true,
 
       });
-        localStorage.setItem('isLogged', 'true')
+        localStorage.setItem('isLogged', true)
         setemail('')
         setPass('')
         setloggedIn(true)
@@ -68,7 +68,9 @@ export default function SignIn() {
       }
       catch (error) {
       console.error(error);
-      navigate('/register');
+      alert("Invalid Email or Password")
+      setemail('')
+      setPass('')
     }
 
   };
@@ -130,11 +132,7 @@ export default function SignIn() {
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
+              
               <Grid item>
                 <Link href="/register" variant="body2">
                   {"Don't have an account? Sign Up"}

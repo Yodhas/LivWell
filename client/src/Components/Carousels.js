@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Carousel1 from "../images/image3.jpeg";
+import Carousel1 from "../images/image1.jpg";
 import Carousel3 from "../images/image2.jpg";
 import Carousel2 from "../images/image3.jpg";
 import { Carousel } from "react-bootstrap";
@@ -17,7 +17,7 @@ function Carousels() {
             className="d-block w-100"
             src={Carousel1}
             alt="First slide"
-            style={{ height: "100vh" }}
+            style={{ height: "100vh", backgroundColor: 'rgba(0, 0, 0, 0.6)'}}
           />
           
         </Carousel.Item>
@@ -33,10 +33,10 @@ function Carousels() {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            className="d-block w-100 mask"
             src={Carousel2}
             alt="Third slide"
-            style={{ height: "100vh" }}
+            style={{ height: "100vh",backgroundColor: 'rgba(123, 88, 7, 0.6)' }}
           />
 
         </Carousel.Item>
