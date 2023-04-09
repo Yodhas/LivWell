@@ -1,0 +1,209 @@
+[{
+  "_id": {
+    "$oid": "6285f0792a3e453a655d6aa1"
+  },
+  "propname": "Shiv Elite Alpina 104",
+  "ownname": "Varun Katiyar ",
+  "owncontact": {
+    "$numberLong": "9876666665"
+  },
+  "address": "Shankarpur Nagpur ",
+  "rentpermonth": 10000,
+  "depositamount": 20000,
+  "email": "varun2120@gmail.com",
+  "password": "123456789",
+  "ptype": "Flat",
+  "pfeatures": "Semi - Furnished 3bhk flat with 2 beds ,sofa, washing machine ",
+  "createdAt": {
+    "$date": "2022-05-19T07:23:37.199Z"
+  },
+  "updatedAt": {
+    "$date": "2022-05-19T07:23:37.199Z"
+  },
+  "__v": 0,
+  "college": "Government College of Engineering, Nagpur"
+},{
+  "_id": {
+    "$oid": "6285f0a62a3e453a655d6aa3"
+  },
+  "propname": "Shiv Elite Tulip 707",
+  "ownname": "Ashutosh Rokade ",
+  "owncontact": {
+    "$numberLong": "9876664565"
+  },
+  "address": "Near government College of Engineering Nagpur",
+  "rentpermonth": 6000,
+  "depositamount": 12000,
+  "email": "ashu2120@gmail.com",
+  "password": "1234567890",
+  "ptype": "Rowhouse",
+  "pfeatures": "Semi-Furnished 2bhk flat with basic accomodation facilities available ",
+  "createdAt": {
+    "$date": "2022-05-19T07:24:22.382Z"
+  },
+  "updatedAt": {
+    "$date": "2022-05-19T07:24:22.382Z"
+  },
+  "__v": 0,
+  "college": "Government College of Engineering, Nagpur"
+},{
+  "_id": {
+    "$oid": "6285f0d72a3e453a655d6aa5"
+  },
+  "propname": "Thakre's PG",
+  "ownname": "Ankur Thakre",
+  "owncontact": {
+    "$numberLong": "98766645650"
+  },
+  "address": "Near Gupta clinic, sector-29 New Khapri",
+  "rentpermonth": 5000,
+  "depositamount": 10000,
+  "email": "ankur2120@gmail.com",
+  "password": "12345670",
+  "ptype": "PG",
+  "pfeatures": "PG only for girls! with all safety norms with 2 time meal included!",
+  "createdAt": {
+    "$date": "2022-05-19T07:25:11.600Z"
+  },
+  "updatedAt": {
+    "$date": "2022-05-19T07:25:11.600Z"
+  },
+  "__v": 0,
+  "college": "Ramdeobaba College of Engineering, Nagpur"
+},{
+  "_id": {
+    "$oid": "6285f2152a3e453a655d6aaa"
+  },
+  "propname": "Rokade Nivas",
+  "ownname": "Laxman Rokade ",
+  "owncontact": {
+    "$numberLong": "98766645650"
+  },
+  "address": "Opp. Cafe Temptation, New Khapri",
+  "rentpermonth": 4000,
+  "depositamount": 8000,
+  "email": "user@gmail.com",
+  "password": "12345670",
+  "ptype": "Room",
+  "pfeatures": "Room Available for 2 members without furniture, electric bill excluded.",
+  "createdAt": {
+    "$date": "2022-05-19T07:30:29.443Z"
+  },
+  "updatedAt": {
+    "$date": "2022-05-19T07:30:29.443Z"
+  },
+  "__v": 0,
+  "college": "Ramdeobaba College of Engineering, Nagpur"
+},{
+  "_id": {
+    "$oid": "6285f7a8a7da9034d87c3cb6"
+  },
+  "propname": "Shive Elite Aster-604",
+  "ownname": "Tanmay Pardhi ",
+  "owncontact": 9876650,
+  "address": "Phase-3, Shive Elite, Shankarpur, Nagpur",
+  "rentpermonth": 9000,
+  "depositamount": 15000,
+  "email": "an@gmail.com",
+  "password": "12345670",
+  "ptype": "Flat",
+  "pfeatures": "Furnished 2bhk flat with 1 bed, A.C, washing machine ",
+  "createdAt": {
+    "$date": "2022-05-19T07:54:16.613Z"
+  },
+  "updatedAt": {
+    "$date": "2022-05-19T07:54:16.613Z"
+  },
+  "__v": 0,
+  "college": "Ramdeobaba College of Engineering, Nagpur"
+},{
+  "_id": {
+    "$oid": "6285f7e4a7da9034d87c3cba"
+  },
+  "propname": "Sharma's PG",
+  "ownname": "Mr. Kishor Bhagat ",
+  "owncontact": 9876650,
+  "address": "Besides Government College of Engineering, Nagpur",
+  "rentpermonth": 3000,
+  "depositamount": 7000,
+  "email": "anonymous@gmail.com",
+  "password": "anonymous",
+  "ptype": "PG",
+  "pfeatures": "Only for Girls!",
+  "createdAt": {
+    "$date": "2022-05-19T07:55:16.130Z"
+  },
+  "updatedAt": {
+    "$date": "2022-05-19T07:55:16.130Z"
+  },
+  "__v": 0,
+  "college": "IIIT, Nagpur"
+},{
+  "_id": {
+    "$oid": "64249bc302a430a3f8d8a7fe"
+  },
+  "propname": "Anna PG",
+  "ownname": "Varun anna",
+  "owncontact": 1234567,
+  "address": "Butibori, Nagpur",
+  "rentpermonth": 5000,
+  "depositamount": 2000,
+  "email": "ashutoshrokade66@gmail.com",
+  "password": "Ashutosh@2023",
+  "ptype": "Flat/Apartment",
+  "pfeatures": "None",
+  "createdAt": {
+    "$date": "2023-03-29T20:12:52.205Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-29T20:12:52.205Z"
+  },
+  "__v": 0,
+  "college": "IIIT, Nagpur"
+},{
+  "_id": {
+    "$oid": "642538388b7edbafd307cb38"
+  },
+  "propname": "Local Homes",
+  "ownname": "varun anna",
+  "owncontact": 951183467,
+  "address": "7th street, Chennai",
+  "rentpermonth": 5000,
+  "depositamount": 3000,
+  "email": "fghjkl",
+  "password": "fghjk",
+  "ptype": "Room",
+  "pfeatures": "Sea Facing Balcony",
+  "createdAt": {
+    "$date": "2023-03-30T07:20:24.499Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-30T07:20:24.499Z"
+  },
+  "__v": 0,
+  "college": "VIT Chennai"
+},{
+  "_id": {
+    "$oid": "64253b0cb7710aca54fec23c"
+  },
+  "propname": "Vasant Heights",
+  "college": "VIT Chennai",
+  "ownname": "Arjun Shetty",
+  "owncontact": {
+    "$numberLong": "9511834670"
+  },
+  "address": "Civil lines",
+  "rentpermonth": 5000,
+  "depositamount": 890,
+  "email": "ashutoshrokade66@gmail.com",
+  "password": "Ashutosh@2023",
+  "ptype": "Flat/Apartment",
+  "pfeatures": "very good",
+  "createdAt": {
+    "$date": "2023-03-30T07:32:28.195Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-30T07:32:28.195Z"
+  },
+  "__v": 0
+}]

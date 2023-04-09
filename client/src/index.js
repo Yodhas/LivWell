@@ -4,7 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./Components/HomePage";
-import AddProperty from "./Pages/AddProperty";
+//import AddProperty from "./Pages/AddProperty";
 import Allproperties from "./Components/Allproperties";
 import Allfetchbycollege from "./Components/Allfetchbycollege";
 import About from "./Components/About";
@@ -14,9 +14,13 @@ import NewProperty from "./Components/NewProperty";
 import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
 import FinalDashboard from "./Components/FinalDashboard";
-import Property from "./Pages/Property";
+//import Property from "./Pages/Property";
 import User from "./Pages/UserProfile/user.js";
+<<<<<<< HEAD
 import Pricing from "./Components/Pricing.js"
+=======
+import Pricing from "./Pages/Pricing";
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05
 import IndividualProperty from "./Pages/IndividualProperty";
 
 ReactDOM.render(
@@ -37,7 +41,11 @@ ReactDOM.render(
         <Route path="/help" element={<Help />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="/college/:id" element={<Allfetchbycollege />} />
+<<<<<<< HEAD
         <Route path="/pricing" element={< Pricing/>} />
+=======
+        <Route path="/pricing" element={<Pricing />} />
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05
       </Routes>
     </Router>
   </React.StrictMode>,

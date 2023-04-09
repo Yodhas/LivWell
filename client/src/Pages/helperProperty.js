@@ -47,4 +47,8 @@ ProductImagesSlider.propTypes = {
   images: PropTypes.array.isRequired,
 };
 
+<<<<<<< HEAD
 export default ProductImagesSlider;
+=======
+export default ProductImagesSlider;
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05
