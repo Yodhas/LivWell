@@ -1,42 +1,64 @@
-const express = require('express')
-const app = express()
-const port = 5000
-const userModel = require('./models/Users')
-const mongoose = require('mongoose');
-const authRoute = require("./routes/auth")
-const userRoute = require("./routes/user")
-const AddNewPropertyRoute = require("./routes/AddNewProperty")
+const express = require("express");
+const app = express();
+const port = 5000;
+const userModel = require("./models/Users");
+const mongoose = require("mongoose");
+const authRoute = require("./routes/auth");
+const userRoute = require("./routes/user");
+const AddNewPropertyRoute = require("./routes/AddNewProperty");
 const multer = require("multer");
-const cors = require('cors');
+
+const cors = require("cors");
 const dotenv = require("dotenv");
 const paymentRoutes = require("./routes/payment");
 
-app.use(function(req, res, next) {
-  // Allow requests from http://localhost:3000
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  // Allow cookies to be included in the request
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  // Allow the following HTTP methods
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  // Allow the following request headers
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-  // Pass control to the next middleware function
+// app.use(function (req, res, next) {
+//   // Allow requests from http://localhost:3000
+//   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+//   // Allow cookies to be included in the request
+//   res.setHeader("Access-Control-Allow-Credentials", "true");
+//   // Allow the following HTTP methods
+//   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+//   // Allow the following request headers
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "X-Requested-With,content-type"
+//   );
+//   // Pass control to the next middleware function
+//   next();
+// });
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // Replace with your frontend domain
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Credentials', 'true');
   next();
 });
+
 dotenv.config();
 app.use(express.json());
 app.use(cors());
 
-main().then(()=>{console.log("Successfully Connected!")}).catch(err => console.log(err));
+main()
+  .then(() => {
+    console.log("Successfully Connected!");
+  })
+  .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://localhost:27017/LivWell');
+  await mongoose.connect("mongodb://localhost:27017/LivWell");
 }
 
 // app.get('/', (req, res) => {
 //   res.send('Hello World!')
 // })
-
 
 // const storage = multer.diskStorage({
 //   destination: (req, file, cb) => {
@@ -52,11 +74,11 @@ async function main() {
 //   res.status(200).json("File has been uploaded");
 // });
 
-app.use('/api/auth', authRoute)
-app.use('/api/user', userRoute)
-app.use('/api/new', AddNewPropertyRoute)
+app.use("/api/auth", authRoute);
+app.use("/api/user", userRoute);
+app.use("/api/new", AddNewPropertyRoute);
 app.use("/api/payment", paymentRoutes);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});

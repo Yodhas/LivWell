@@ -16,7 +16,7 @@ import SignUp from "./Components/SignUp";
 import FinalDashboard from "./Components/FinalDashboard";
 import Property from "./Pages/Property";
 import User from "./Pages/UserProfile/user.js";
-import Pricing from "./Components/Pricing.js"
+import Pricing from "./Components/Pricing.js";
 import IndividualProperty from "./Pages/IndividualProperty";
 
 ReactDOM.render(
@@ -37,7 +37,7 @@ ReactDOM.render(
         <Route path="/help" element={<Help />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="/college/:id" element={<Allfetchbycollege />} />
-        <Route path="/pricing" element={< Pricing/>} />
+        <Route path="/pricing" element={<Pricing />} /> 
       </Routes>
     </Router>
   </React.StrictMode>,

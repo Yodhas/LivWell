@@ -11,8 +11,8 @@ import CardHeader from "@material-ui/core/CardHeader";
 import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
 import Switch from "@material-ui/core/Switch";
-import { FcCheckmark } from 'react-icons/fc';
-import {ImCross} from 'react-icons/im';
+import { FcCheckmark } from "react-icons/fc";
+import { ImCross } from "react-icons/im";
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -32,12 +32,11 @@ export default function Pricing(props) {
     badge: "LIVWELL PREMIUM",
     "header-p1": "Subscribe for Livwell Premium",
     "header-p2": "",
-    description:
-    "Premium feature lets you - ",
-    "d1": " Rank Higher in Search  ",
-    "d2": "Multiply your Leads  ",
-    "d3": "Close more deals  ",
-    "d4": "Drive your business growth",
+    description: "Premium feature lets you - ",
+    d1: " Rank Higher in Search  ",
+    d2: "Multiply your Leads  ",
+    d3: "Close more deals  ",
+    d4: "Drive your business growth",
     option1: "Monthly",
     option2: "Annual",
     "01_title": "Silver",
@@ -75,8 +74,6 @@ export default function Pricing(props) {
     setState({ ...state, checkbox: event.target.checked });
   };
 
-
-
   const initPayment = (data) => {
     const options = {
       key: "rzp_test_wy8irY0bXtDdI0",
@@ -88,8 +85,11 @@ export default function Pricing(props) {
       handler: async (response) => {
         try {
           const verifyUrl = "http://localhost:5000/api/payment/verify";
-
-          const { data } = await axios.post(verifyUrl, response);
+          axios.defaults.withCredentials = true;
+          const { data } = await axios.post(verifyUrl, {
+            response,
+            withCredentials: true,
+          });
 
           console.log(data);
         } catch (error) {
@@ -103,7 +103,6 @@ export default function Pricing(props) {
     };
     const rzp1 = new window.Razorpay(options);
     rzp1.open();
-
   };
 
   const priceS = 50;
@@ -111,8 +110,11 @@ export default function Pricing(props) {
   const handlePaymentS = async () => {
     try {
       const orderUrl = "http://localhost:5000/api/payment/orders";
-
-      const { data } = await axios.post(orderUrl, { amount: priceS });
+      axios.defaults.withCredentials = true;
+      const { data } = await axios.post(orderUrl, {
+        amount: priceS,
+        withCredentials: true,
+      });
       console.log(data);
       initPayment(data.data);
     } catch (error) {
@@ -125,8 +127,11 @@ export default function Pricing(props) {
   const handlePaymentG = async () => {
     try {
       const orderUrl = "http://localhost:5000/api/payment/orders";
-
-      const { data } = await axios.post(orderUrl, { amount: priceG });
+      axios.defaults.withCredentials = true;
+      const { data } = await axios.post(orderUrl, {
+        amount: priceG,
+        withCredentials: true,
+      });
       console.log(data);
       initPayment(data.data);
     } catch (error) {
@@ -139,8 +144,11 @@ export default function Pricing(props) {
   const handlePaymentP = async () => {
     try {
       const orderUrl = "http://localhost:5000/api/payment/orders";
-
-      const { data } = await axios.post(orderUrl, { amount: priceP });
+      axios.defaults.withCredentials = true;
+      const { data } = await axios.post(orderUrl, {
+        amount: priceP,
+        withCredentials: true,
+      });
       console.log(data);
       initPayment(data.data);
     } catch (error) {
@@ -149,36 +157,53 @@ export default function Pricing(props) {
   };
   return (
     <section className={classes.section}>
-      <Container maxWidth="lg" style={{fontFamily:"Open Sans"}}>
+      <Container maxWidth="lg" style={{ fontFamily: "Open Sans" }}>
         <Box py={8} textAlign="center">
           <Box mb={3}>
             <Container maxWidth="sm">
-              <Typography variant="overline" color="primary"style={{fontSize:"1.3rem"}}>
+              <Typography
+                variant="overline"
+                color="primary"
+                style={{ fontSize: "1.3rem" }}
+              >
                 <strong>{content["badge"]}</strong>
               </Typography>
               <Typography variant="h3" component="h2" gutterBottom={true}>
-                <Typography variant="h3" component="span" color="primary" style={{color:"#FF487E"}}>
+                <Typography
+                  variant="h3"
+                  component="span"
+                  color="primary"
+                  style={{ color: "#FF487E" }}
+                >
                   {content["header-p1"]}{" "}
-                </Typography><br></br>
+                </Typography>
+                <br></br>
                 <Typography variant="h3" component="span">
                   {content["header-p2"]}
                 </Typography>
               </Typography>
               <Typography
-              variant="h5" component="h4"
-  
+                variant="h5"
+                component="h4"
                 color="textSecondary"
                 paragraph={true}
-              >Premium Feature lets you :
-                
+              >
+                Premium Feature lets you :
               </Typography>
               <Typography
                 variant="subtitle1"
                 color=""
                 paragraph={true}
-                style={{fontSize:"1.2rem"}}
-              ><FcCheckmark></FcCheckmark>
-                {content["d1"]}{"   "}<FcCheckmark></FcCheckmark>{" "}{content["d2"]}{"   "}<FcCheckmark></FcCheckmark>{" "}{content["d3"]}{"   "}<FcCheckmark></FcCheckmark>{" "}{content["d4"]}
+                style={{ fontSize: "1.2rem" }}
+              >
+                <FcCheckmark></FcCheckmark>
+                {content["d1"]}
+                {"   "}
+                <FcCheckmark></FcCheckmark> {content["d2"]}
+                {"   "}
+                <FcCheckmark></FcCheckmark> {content["d3"]}
+                {"   "}
+                <FcCheckmark></FcCheckmark> {content["d4"]}
               </Typography>
 
               <div>
@@ -200,228 +225,275 @@ export default function Pricing(props) {
             </Container>
           </Box>
 
-
-
-
           <div className="container">
-          <Grid container spacing={10}>
-            <Grid item xs={12} md={4}>
-              <Card variant="outlined" style={{"boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"}}>
-                <CardHeader
-                ></CardHeader>
-                <Typography
-                        variant="h3"
-                        color="primary"
-                        component="span"
-                      >
-                        {content["01_title"]}
-                      </Typography>
-                <CardContent>
-                  <Box px={1} pb={2}>
-                    <Typography variant="h3" component="h2" gutterBottom={true}>
-                      {content["01_price"]}
+            <Grid container spacing={10}>
+              <Grid item xs={12} md={4}>
+                <Card
+                  variant="outlined"
+                  style={{
+                    boxShadow:
+                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                  }}
+                >
+                  <CardHeader></CardHeader>
+                  <Typography variant="h3" color="primary" component="span">
+                    {content["01_title"]}
+                  </Typography>
+                  <CardContent>
+                    <Box px={1} pb={2}>
                       <Typography
-                        variant="h6"
-                        color="textSecondary"
-                        component="span"
+                        variant="h3"
+                        component="h2"
+                        gutterBottom={true}
                       >
-                        {content["01_suffix"]}
+                        {content["01_price"]}
+                        <Typography
+                          variant="h6"
+                          color="textSecondary"
+                          component="span"
+                        >
+                          {content["01_suffix"]}
+                        </Typography>
                       </Typography>
-                    </Typography>
-                  <div style={{"textAlign":"left", paddingLeft:"10vh", fontSize:"1.2rem"}}>
-                    
-                    <Typography
-                      color=""
-                      variant="subtitle1"
-                      component="p"
-                      textAlign="left"
-                      style={{fontSize:"1.2rem"}}
-                    >
-                      <FcCheckmark></FcCheckmark>{" "}&nbsp;&nbsp;&nbsp;{content["01_benefit1"]}
-                    </Typography>
-                    <Typography
-                      color=""
-                      variant="subtitle1"
-                      component="p"
-                      style={{fontSize:"1.2rem"}}
-                    >
-                      <FcCheckmark></FcCheckmark>{" "}&nbsp;&nbsp;&nbsp;{content["01_benefit2"]}
-                    </Typography>
-                    <Typography
-                      color=""
-                      variant="subtitle1"
-                      component="p"
-                      style={{fontSize:"1.2rem"}}
-                    >
-                      <ImCross></ImCross>{" "}&nbsp;&nbsp;&nbsp;{content["01_benefit3"]}
-                    </Typography>
-                    <Typography
-                      color=""
-                      variant="subtitle1"
-                      component="p"
-                      paragraph={true}
-                      style={{fontSize:"1.2rem"}}
-                    >
-                     <ImCross></ImCross>{" "}&nbsp;&nbsp;&nbsp;{content["01_benefit4"]}
-                    </Typography>
-                    </div>
-                  </Box>
+                      <div
+                        style={{
+                          textAlign: "left",
+                          paddingLeft: "10vh",
+                          fontSize: "1.2rem",
+                        }}
+                      >
+                        <Typography
+                          color=""
+                          variant="subtitle1"
+                          component="p"
+                          textAlign="left"
+                          style={{ fontSize: "1.2rem" }}
+                        >
+                          <FcCheckmark></FcCheckmark> &nbsp;&nbsp;&nbsp;
+                          {content["01_benefit1"]}
+                        </Typography>
+                        <Typography
+                          color=""
+                          variant="subtitle1"
+                          component="p"
+                          style={{ fontSize: "1.2rem" }}
+                        >
+                          <FcCheckmark></FcCheckmark> &nbsp;&nbsp;&nbsp;
+                          {content["01_benefit2"]}
+                        </Typography>
+                        <Typography
+                          color=""
+                          variant="subtitle1"
+                          component="p"
+                          style={{ fontSize: "1.2rem" }}
+                        >
+                          <ImCross></ImCross> &nbsp;&nbsp;&nbsp;
+                          {content["01_benefit3"]}
+                        </Typography>
+                        <Typography
+                          color=""
+                          variant="subtitle1"
+                          component="p"
+                          paragraph={true}
+                          style={{ fontSize: "1.2rem" }}
+                        >
+                          <ImCross></ImCross> &nbsp;&nbsp;&nbsp;
+                          {content["01_benefit4"]}
+                        </Typography>
+                      </div>
+                    </Box>
 
-                  <Button onClick={handlePaymentS} variant="contained" color="primary" className="btn btn-primary" style={{  color:"white" }}>
-                    {content["primary-action"]}
-                  </Button>
-                  <Box mt={1}>
-                    <Link href="#" color="primary">
-                      {content["secondary-action"]}
-                    </Link>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Card variant="outlined" style={{"boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"}}>
-              <CardHeader
-                ></CardHeader>
-                <Typography
-                        variant="h3"
-                        color="primary"
-                        component="span"
-                      >
-                        {content["02_title"]}
-                      </Typography>
-                <CardContent>
-                  <Box px={1} pb={2}>
-                    <Typography variant="h3" component="h2" gutterBottom={true}>
-                      {content["02_price"]}
+                    <Button
+                      onClick={handlePaymentS}
+                      variant="contained"
+                      color="primary"
+                      className="btn btn-primary"
+                      style={{ color: "white" }}
+                    >
+                      {content["primary-action"]}
+                    </Button>
+                    <Box mt={1}>
+                      <Link href="#" color="primary">
+                        {content["secondary-action"]}
+                      </Link>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <Card
+                  variant="outlined"
+                  style={{
+                    boxShadow:
+                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                  }}
+                >
+                  <CardHeader></CardHeader>
+                  <Typography variant="h3" color="primary" component="span">
+                    {content["02_title"]}
+                  </Typography>
+                  <CardContent>
+                    <Box px={1} pb={2}>
                       <Typography
-                        variant="h6"
-                        color="textSecondary"
-                        component="span"
+                        variant="h3"
+                        component="h2"
+                        gutterBottom={true}
                       >
-                        {content["02_suffix"]}
+                        {content["02_price"]}
+                        <Typography
+                          variant="h6"
+                          color="textSecondary"
+                          component="span"
+                        >
+                          {content["02_suffix"]}
+                        </Typography>
                       </Typography>
-                    </Typography>
 
-                    <div style={{"textAlign":"left", paddingLeft:"10vh"}}>
-                    <Typography
-                      color=""
-                      variant="subtitle1"
-                      component="p"
-                      style={{fontSize:"1.2rem"}}
+                      <div style={{ textAlign: "left", paddingLeft: "10vh" }}>
+                        <Typography
+                          color=""
+                          variant="subtitle1"
+                          component="p"
+                          style={{ fontSize: "1.2rem" }}
+                        >
+                          <FcCheckmark></FcCheckmark> &nbsp;&nbsp;&nbsp;
+                          {content["02_benefit1"]}
+                        </Typography>
+                        <Typography
+                          color=""
+                          variant="subtitle1"
+                          component="p"
+                          style={{ fontSize: "1.2rem" }}
+                        >
+                          <FcCheckmark></FcCheckmark> &nbsp;&nbsp;&nbsp;
+                          {content["02_benefit2"]}
+                        </Typography>
+                        <Typography
+                          color=""
+                          variant="subtitle1"
+                          component="p"
+                          style={{ fontSize: "1.2rem" }}
+                        >
+                          <FcCheckmark></FcCheckmark> &nbsp;&nbsp;&nbsp;
+                          {content["02_benefit3"]}
+                        </Typography>
+                        <Typography
+                          color=""
+                          variant="subtitle1"
+                          component="p"
+                          paragraph={true}
+                          style={{ fontSize: "1.2rem" }}
+                        >
+                          <ImCross></ImCross> &nbsp;&nbsp;&nbsp;
+                          {content["02_benefit4"]}
+                        </Typography>
+                      </div>
+                    </Box>
+
+                    <Button
+                      onClick={handlePaymentG}
+                      variant="contained"
+                      color="primary"
+                      className="btn btn-primary"
+                      style={{ color: "white" }}
                     >
-                      <FcCheckmark></FcCheckmark>{" "}&nbsp;&nbsp;&nbsp;{content["02_benefit1"]}
-                    </Typography>
-                    <Typography
-                      color=""
-                      variant="subtitle1"
-                      component="p"
-                      style={{fontSize:"1.2rem"}}
-                    >
-                      <FcCheckmark></FcCheckmark>{" "}&nbsp;&nbsp;&nbsp;{content["02_benefit2"]}
-                    </Typography>
-                    <Typography
-                      color=""
-                      variant="subtitle1"
-                      component="p"
-                      style={{fontSize:"1.2rem"}}
-                    >
-                      <FcCheckmark></FcCheckmark>{" "}&nbsp;&nbsp;&nbsp;{content["02_benefit3"]}
-                    </Typography>
-                    <Typography
-                      color=""
-                      variant="subtitle1"
-                      component="p"
-                      paragraph={true}
-                      style={{fontSize:"1.2rem"}}
-                    >
-                      <ImCross></ImCross>{" "}&nbsp;&nbsp;&nbsp;{content["02_benefit4"]}
-                    </Typography>
-                    </div>
-                  </Box>
-                  
-                  <Button onClick={handlePaymentG} variant="contained" color="primary" className="btn btn-primary" style={{  color:"white" }}>
-                    {content["primary-action"]}
-                  </Button>
-                  <Box mt={1}>
-                    <Link href="#" color="primary">
-                      {content["secondary-action"]}
-                    </Link>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Card variant="outlined" style={{"boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"}}>
-              <CardHeader
-                ></CardHeader>
-                <Typography
-                        variant="h3"
-                        color="primary"
-                        component="span"
-                      >
-                        {content["03_title"]}
-                      </Typography>
-                <CardContent>
-                  <Box px={1} pb={2}>
-                    <Typography variant="h3" component="h2" gutterBottom={true}>
-                      {content["03_price"]}
+                      {content["primary-action"]}
+                    </Button>
+                    <Box mt={1}>
+                      <Link href="#" color="primary">
+                        {content["secondary-action"]}
+                      </Link>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <Card
+                  variant="outlined"
+                  style={{
+                    boxShadow:
+                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                  }}
+                >
+                  <CardHeader></CardHeader>
+                  <Typography variant="h3" color="primary" component="span">
+                    {content["03_title"]}
+                  </Typography>
+                  <CardContent>
+                    <Box px={1} pb={2}>
                       <Typography
-                        variant="h6"
-                        color="textSecondary"
-                        component="span"
+                        variant="h3"
+                        component="h2"
+                        gutterBottom={true}
                       >
-                        {content["03_suffix"]}
+                        {content["03_price"]}
+                        <Typography
+                          variant="h6"
+                          color="textSecondary"
+                          component="span"
+                        >
+                          {content["03_suffix"]}
+                        </Typography>
                       </Typography>
-                    </Typography>
-                    <div style={{"textAlign":"left", paddingLeft:"10vh"}}>
-                    <Typography
-                      color=""
-                      variant="subtitle1"
-                      component="p"
-                      style={{fontSize:"1.2rem"}}
+                      <div style={{ textAlign: "left", paddingLeft: "10vh" }}>
+                        <Typography
+                          color=""
+                          variant="subtitle1"
+                          component="p"
+                          style={{ fontSize: "1.2rem" }}
+                        >
+                          <FcCheckmark></FcCheckmark> &nbsp;&nbsp;&nbsp;
+                          {content["03_benefit1"]}
+                        </Typography>
+                        <Typography
+                          color=""
+                          variant="subtitle1"
+                          component="p"
+                          style={{ fontSize: "1.2rem" }}
+                        >
+                          <FcCheckmark></FcCheckmark> &nbsp;&nbsp;&nbsp;
+                          {content["03_benefit2"]}
+                        </Typography>
+                        <Typography
+                          color=""
+                          variant="subtitle1"
+                          component="p"
+                          style={{ fontSize: "1.2rem" }}
+                        >
+                          <FcCheckmark></FcCheckmark> &nbsp;&nbsp;&nbsp;
+                          {content["03_benefit3"]}
+                        </Typography>
+                        <Typography
+                          color=""
+                          variant="subtitle1"
+                          component="p"
+                          paragraph={true}
+                          style={{ fontSize: "1.2rem" }}
+                        >
+                          <FcCheckmark></FcCheckmark> &nbsp;&nbsp;&nbsp;
+                          {content["03_benefit4"]}
+                        </Typography>
+                      </div>
+                    </Box>
+                    <Button
+                      onClick={handlePaymentP}
+                      variant="contained"
+                      color="primary"
+                      className="btn btn-primary"
+                      style={{ color: "white" }}
                     >
-                      <FcCheckmark></FcCheckmark>{" "}&nbsp;&nbsp;&nbsp;{content["03_benefit1"]}
-                    </Typography>
-                    <Typography
-                      color=""
-                      variant="subtitle1"
-                      component="p"
-                      style={{fontSize:"1.2rem"}}
-                    >
-                      <FcCheckmark></FcCheckmark>{" "}&nbsp;&nbsp;&nbsp;{content["03_benefit2"]}
-                    </Typography>
-                    <Typography
-                      color=""
-                      variant="subtitle1"
-                      component="p"
-                      style={{fontSize:"1.2rem"}}
-                    >
-                      <FcCheckmark></FcCheckmark>{" "}&nbsp;&nbsp;&nbsp;{content["03_benefit3"]}
-                    </Typography>
-                    <Typography
-                      color=""
-                      variant="subtitle1"
-                      component="p"
-                      paragraph={true}
-                      style={{fontSize:"1.2rem"}}
-                    >
-                      <FcCheckmark></FcCheckmark>{" "}&nbsp;&nbsp;&nbsp;{content["03_benefit4"]}
-                    </Typography>
-                    </div>
-                  </Box>
-                  <Button onClick={handlePaymentP} variant="contained" color="primary" className="btn btn-primary" style={{  color:"white" }}>
-                    {content["primary-action"]}
-                  </Button>
-                  
-                  <Box mt={1}>
-                    <Link href="#" color="primary">
-                      {content["secondary-action"]}
-                    </Link>
-                  </Box>
-                </CardContent>
-              </Card>
+                      {content["primary-action"]}
+                    </Button>
+
+                    <Box mt={1}>
+                      <Link href="#" color="primary">
+                        {content["secondary-action"]}
+                      </Link>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
             </Grid>
-          </Grid>
           </div>
         </Box>
       </Container>
