@@ -7,8 +7,8 @@ function Posts({details}) {
   return (
     <div style={{}}>
         <OwlCarousel
-        className="featured-carousel owl-carousel"
-        style={{padding: "0px",backgroundColor: "#3c3d41"}}
+        className="featured-carousel owl-carousel "
+        style={{borderRadius:"30px!important"}}
         items={3}
         loop
         autoplay={true}

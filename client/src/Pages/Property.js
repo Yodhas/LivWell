@@ -2,8 +2,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Footer from "../Components/Footer_Home";
+<<<<<<< HEAD
+import { Link } from "react-router-dom"
+
+
+=======
 import { Link } from "react-router-dom";
 import Pricing from "./Pricing";
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05
 
 function Property() {
   const location = useLocation();
@@ -11,6 +17,74 @@ function Property() {
   console.log(location);
   console.log(refId);
 
+<<<<<<< HEAD
+  const location = useLocation();
+  const refId = location.pathname.split('/')[2];
+  console.log(location);
+  console.log(refId);
+
+  const [datas, setdatas] = useState({});
+
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get('/new/' + refId);
+      console.log(res);
+      setdatas(res.data);
+    }
+    getPost()
+  }, [])
+
+
+  const [book, setBook] = useState({
+    name: "LivWell",
+    author: "livwell@gmail.com",
+    img: "",
+    price: 250,
+  });
+
+  const initPayment = (data) => {
+    const options = {
+      key: "rzp_test_wy8irY0bXtDdI0",
+      amount: data.amount,
+      currency: data.currency,
+      name: book.name,
+      description: "Test Transaction",
+      image: book.img,
+      order_id: data.id,
+      handler: async (response) => {
+        try {
+          const verifyUrl = "http://localhost:5000/api/payment/verify";
+
+          const { data } = await axios.post(verifyUrl, response);
+
+          console.log(data);
+        } catch (error) {
+          console.log("error hai");
+          console.log(error);
+        }
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+    const rzp1 = new window.Razorpay(options);
+    rzp1.open();
+
+  };
+
+  const handlePayment = async () => {
+    try {
+      const orderUrl = "http://localhost:5000/api/payment/orders";
+      const { data } = await axios.post(orderUrl, { amount: book.price });
+      console.log(data);
+      initPayment(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+=======
   const [datas, setdatas] = useState({});
 
   useEffect(() => {
@@ -21,8 +95,10 @@ function Property() {
     };
     getPost();
   }, []);
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05
 
   return (
+
     <div>
       <div className="mainmenu-bg" id="mainmenu-bg" />
 
@@ -134,6 +210,31 @@ function Property() {
                     alt="uvw"
                   />
                 </div>
+<<<<<<< HEAD
+                <div
+                  className="swiper-slide"
+                >
+                  <img src="https://is1-3.housingcdn.com/01c16c28/8d19d06bf30db6cdf5b03607e231060a/v0/fs/2_bhk_apartment-for-sale-shankarpur_1-Nagpur-hall.jpg" alt="uvw" />
+                </div>
+                <div
+                  className="swiper-slide"
+                >
+                  <img src="https://files.propertywala.com/photos/ae/J119004331.kitchen.2761902l.jpg" alt="uvw" />
+                </div>
+                <div
+                  className="swiper-slide"
+                >
+                  <img src="https://newprojects.99acres.com/projects/om_shivam_buildcon._pvt._ltd./shiv_elite/images/5uvexmvf.jpg" alt="uvw" />
+                </div>
+                <div
+                  className="swiper-slide"
+                >
+                  <img src="/dist/img2/PropertuImage.jpg" alt="uvw" />
+                </div>
+                <div
+                  className="swiper-slide"
+                >
+=======
                 <div className="swiper-slide">
                   <img
                     src="https://is1-3.housingcdn.com/01c16c28/8d19d06bf30db6cdf5b03607e231060a/v0/fs/2_bhk_apartment-for-sale-shankarpur_1-Nagpur-hall.jpg"
@@ -156,6 +257,7 @@ function Property() {
                   <img src="/dist/img2/PropertuImage.jpg" alt="uvw" />
                 </div>
                 <div className="swiper-slide">
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05
                   <img src="/dist/img2/PropertuImage.jpg" alt="uvw" />
                 </div>
               </div>
@@ -368,10 +470,25 @@ function Property() {
           <h3>
             <strong>LivWell Co.</strong>
           </h3>
+<<<<<<< HEAD
+
+        </div>
+
+        <button onClick={handlePayment} className="btn btn-dark">
+          Add to Wishlist
+        </button>
+        <button  className="btn btn-primary" style={{ textDecoration: "none" }}>
+          <a href={`/pricing`} >
+                          Choose a Plan 
+          </a>
+        </button>
+
+=======
         </div>
         <a href="/pricing" className="modalform-btn btn1 prop-callback">
           <strong>Add to Wishlist</strong>
         </a>
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05
       </div>
 
       <div className="prop-info">
@@ -379,16 +496,30 @@ function Property() {
           <h2>
             About <b>Property</b>
           </h2>
+<<<<<<< HEAD
+          <p>
+            {datas.pfeatures}
+          </p>
+=======
           <p>{datas.pfeatures}</p>
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05
           <hr className="prop-hr mb-4" />
           <h2>
             <b>For further Details</b>
           </h2>
+<<<<<<< HEAD
+          <p>Contact :   <a href="tel:9876543210" >{datas.owncontact}</a> <br />
+            Email : <a href="mailto:varun2120@gmail.com">{datas.email}</a> </p>
+
+        </div>
+
+=======
           <p>
             Contact : <a href="tel:9876543210">{datas.owncontact}</a> <br />
             Email : <a href="mailto:varun2120@gmail.com">{datas.email}</a>{" "}
           </p>
         </div>
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05
       </div>
       <Footer />
     </div>
