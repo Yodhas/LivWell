@@ -31,7 +31,11 @@ function App() {
     //   backgroundSize: "100% 100%",
     // }}
     >
+<<<<<<< HEAD
+      {/* <img
+=======
       <img
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05
         src="https://img.freepik.com/free-photo/skyscrapers_1353-54.jpg?w=740&t=st=1680952946~exp=1680953546~hmac=fe281e6f374d8a1aea0e6a363a9568a339eda0b36f199c2c681e7f1ec3649189"
         alt="abcd"
         style={{
@@ -39,9 +43,13 @@ function App() {
           width: "100%",
           height: "90%",
           zIndex: "-1",
-          opacity: "50%",
+          opacity: "28%",
         }}
+<<<<<<< HEAD
+      /> */}
+=======
       />
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05
       <div
         style={{
           height: "100vh",
@@ -66,16 +74,6 @@ function App() {
             marginTop: "10px",
           }}
         >
-          <div
-            style={{
-              height: "30%",
-              width: "40%",
-              backgroundColor: "black",
-              opacity: "70%",
-              position: "absolute",
-              zIndex: "-1",
-            }}
-          ></div>
           <p className="prop-main-loc">
             <a href="catalog-grid.html">{datas.address} </a>{" "}
           </p>
@@ -204,9 +202,15 @@ function App() {
         <a
           href="/pricing"
           className="modalform-btn btn1 prop-callback"
+<<<<<<< HEAD
+          style={{ width: "65%"}}
+        >
+          <strong>Promote your Property</strong>
+=======
           style={{ width: "65%" }}
         >
           <strong>Add to Wishlist</strong>
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05
         </a>
       </div>
       <Footer />
@@ -214,4 +218,8 @@ function App() {
   );
 }
 
+<<<<<<< HEAD
 export default App;
+=======
+export default App;
+>>>>>>> b88be53c0e806967eea608c2970814f61afadf05

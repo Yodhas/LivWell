@@ -12,14 +12,14 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logo from "../images/logo.png"
 import userImg from "../images/image.jpg"
   
 const pages = ['Home', 'Property', 'About', 'Help'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const ResponsiveAppBar = (props) => {
+const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -37,8 +37,21 @@ const ResponsiveAppBar = (props) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const [loggedIn, setloggedIn] = useState(localStorage.getItem('isLogged'));
 
+  const handleCloseUserMenuSetting = () => {
+    setAnchorElUser(null);
+    localStorage.removeItem('isLogged')
+    setloggedIn(false)
+
+  };
+
+  useEffect(() => {
+    setloggedIn(localStorage.getItem('isLogged'))
+  }, [loggedIn])
   
+
+
 
   return (
     <AppBar position="static " style={{ backgroundColor: 'transparent', position:"absolute", zIndex:'2', backgroundImage: "linear-gradient(45deg, #00000070, transparent)"}}>
@@ -96,9 +109,9 @@ const ResponsiveAppBar = (props) => {
               
             ))}
           </Box>
-
-          {!(props.loggedIn) && 
-          <>
+              {console.log(loggedIn)}
+          {(!loggedIn) ?
+          (<>
           <Link to="/register">
             <Button variant="contained" className="mx-3" disableElevation>
               Sign up  
@@ -110,10 +123,9 @@ const ResponsiveAppBar = (props) => {
               Login  
             </Button>
           </Link>
-          </>
-          }
-
-          {(props.loggedIn) && <Box sx={{ flexGrow: 0 }}>
+          </>)
+          :(<>
+           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar src={userImg} />
@@ -135,16 +147,27 @@ const ResponsiveAppBar = (props) => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+      
               {settings.map((setting, idx) => (
-                <MenuItem key={idx} onClick={handleCloseUserMenu}>
-                  <Link to="/dashboard">
+                <>
+                {setting==='Logout' ? (<MenuItem key={idx} onClick={handleCloseUserMenuSetting}>  
+                  <Link to="/login">
                     <Typography textAlign="center">{setting}</Typography>
-                  </Link>
-                </MenuItem>
+                  </Link> 
+                </MenuItem>):
+                (<MenuItem key={idx} onClick={handleCloseUserMenu}>  
+                <Link to="/dashboard">
+                  <Typography textAlign="center">{setting}</Typography>
+                </Link> 
+              </MenuItem>)
+              }
+                
+                </>
               ))}
             </Menu>
           </Box>
-}
+          </>)}
+
         </Toolbar>
       </Container>
     </AppBar>

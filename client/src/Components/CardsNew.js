@@ -8,9 +8,10 @@ import Stack from '@mui/material/Stack';
 import { Link } from "react-router-dom";
 import Property from "../Pages/Property";
 import { Button } from "@mui/material";
+import "../css/post.css"
 
 
-function CardsNew({info}) {
+function CardsNew({ info }) {
 
   return (
     <>
@@ -28,8 +29,8 @@ function CardsNew({info}) {
                 autoplayTimeout={5000}
                 margin={20}
                 nav> */}
-          <div className="item col-sm-12 col-md-12">
-            <div className="blog-entry">
+          <div className="item col-sm-12 col-md-12 ">
+            <div className="blog-entry post">
               <a
                 href="/"
                 className="block-20 d-flex align-items-start"
@@ -38,16 +39,16 @@ function CardsNew({info}) {
                   "-webkit-box-pack": "space-between",
                   "-webkit-justify-content": "space-between",
                   "-ms-flex-pack": "space-between",
-                  "justify-content": "space-between",
+                  "justify-content": "space-between", "borderStartStartRadius":"10px"
                 }}>
                 <span
                   className="badge badge-primary"
-                  style={{ "border-radius": "0", "font-size": "100%" , "backgroundColor":"#FCA510"}}>
+                  style={{ "border-radius": "0", "font-size": "100%", "backgroundColor": "#FCA510" }}>
                   Available
                 </span>
                 <span
                   className="badge badge-success"
-                  style={{ "border-radius": "0", "font-size": "100%", "backgroundColor":"green" }}>
+                  style={{ "border-radius": "0", "font-size": "100%", "backgroundColor": "green" }}>
                   Verified <br />
                   Owner
                 </span>
@@ -65,7 +66,7 @@ function CardsNew({info}) {
                 <p>
                   Owner: <strong>&nbsp; {info.ownname}</strong>
                 </p>
-                
+
                 <p>
                   Address: <strong>&nbsp; {info.address}</strong>
                 </p>
@@ -79,15 +80,15 @@ function CardsNew({info}) {
 
 
 
-    <Stack spacing={1}>
-    <Rating name="half-rating-read" defaultValue={4} precision={0.5} readOnly />
-    </Stack>
-    <p className="mb-0 mt-3">
-                    <a href={`/single/${info._id}`} className="btn btn-primary" style={{textDecoration: "none"}}>
-                      Explore <span className="ion-ios-arrow-round-forward" />
-                    </a>
-                  </p>
-  
+                <Stack spacing={1}>
+                  <Rating name="half-rating-read" defaultValue={4} precision={0.5} readOnly />
+                </Stack>
+                <p className="mb-0 mt-3">
+                  <a href={`/single/${info._id}`} className="btn btn-primary" style={{ textDecoration: "none" }}>
+                    Explore <span className="ion-ios-arrow-round-forward" />
+                  </a>
+                </p>
+
 
                 {/* <div
                   className="d-flex pb-4"
@@ -215,11 +216,9 @@ function CardsNew({info}) {
               </div>
             </div>
           </div>
-          {/*------------- Card 1 ----------------*/}
-          {/* </OwlCarousel> */}
+
         </div>
-        {/* </div> */}
-        {/* </div> */}
+
       </section>
     </>
   );

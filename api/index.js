@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const dotenv = require("dotenv");
 const port = 5000;
 const userModel = require("./models/Users");
 const mongoose = require("mongoose");
@@ -24,8 +25,9 @@ app.use(function (req, res, next) {
   // Pass control to the next middleware function
   next();
 });
-
+dotenv.config();
 app.use(express.json());
+app.use(cors());
 
 main()
   .then(() => {
@@ -41,6 +43,15 @@ async function main() {
 //   res.send('Hello World!')
 // })
 
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, "images");
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, "hello.png");
+//   },
+// });
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "images");
@@ -50,10 +61,10 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage });
-app.post("/api/upload", upload.single("file"), (req, res) => {
-  res.status(200).json("File has been uploaded");
-});
+// const upload = multer({ storage: storage });
+// app.post("/api/upload", upload.single("file"), (req, res) => {
+//   res.status(200).json("File has been uploaded");
+// });
 
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
